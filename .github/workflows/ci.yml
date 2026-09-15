@@ -27,7 +27,11 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
+     
+      - name: Run tests
+        working-directory: user-api
+        run: |
+          python -m pytest
       - name: Build Docker image
         working-directory: user-api
         run: |
